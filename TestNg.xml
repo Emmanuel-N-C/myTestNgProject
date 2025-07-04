@@ -1,0 +1,8 @@
+<suite name="Suite1">
+    <test name="MultiTest">
+        <classes>
+            <class name="TestNgClass"/>
+            <class name="secondTestNgClass"/>
+        </classes>
+    </test> <!-- Test -->
+</suite> <!-- Suite -->
