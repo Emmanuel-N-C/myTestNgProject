@@ -1,6 +1,6 @@
 # TestNG Selenium Automation – The Internet (Herokuapp)
 
-This project automates tests for [the-internet.herokuapp.com] using **Selenium WebDriver**, **Java**, **TestNG**, and **Maven**.
+This project automates tests for The Internet(Herokuapp) using **Selenium WebDriver**, **Java**, **TestNG**, and **Maven**.
 
 ##  Features Tested
 - ✅ **Form Authentication:** Automates login flow validation with positive and negative test cases.
