@@ -3,11 +3,14 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
+import java.util.Objects;
 import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
 
 public class secondTestNgClass {
 
@@ -52,17 +55,19 @@ public class secondTestNgClass {
 
     private char generateRandomChar() {
         String chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-        Random rand = new Random();
-        return chars.charAt(rand.nextInt(chars.length()));
+        return chars.charAt(ThreadLocalRandom.current().nextInt(chars.length()));
     }
 
-    @Test (priority = 3)
-    public void FloatingMenu(){
-
-        System.out.println("Navigating to floating menu sector");
+    @Test(priority = 3)
+    public void FloatingMenu() {
+        System.out.println("Accessing the Floating Menu section...");
         driver.navigate().back();
         driver.navigate().refresh();
         driver.findElement(By.linkText("Floating Menu")).click();
+
+        // Optional light assertion to confirm navigation
+        Assert.assertTrue(Objects.requireNonNull(driver.getCurrentUrl()).contains("floating"), "Not on the floating menu page.");
     }
+
 
 }
